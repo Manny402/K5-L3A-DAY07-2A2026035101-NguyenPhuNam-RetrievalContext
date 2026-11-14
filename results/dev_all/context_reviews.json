@@ -1,0 +1,422 @@
+[
+  {
+    "config_id": "G0",
+    "query_id": "d7_dev_q01",
+    "context_grade": 1,
+    "reason": "The verified reference says to limit the size of input to avoid excessive CPU and memory usage, so the answer is right that a safeguard is recommended but wrong/unsupported in claiming the provided evidence does not specify one. The cited chunks do support the stated interoperability/special-value details, but they do not support the conclusion about lacking a specific safeguard, and they do not contain the resource-safeguard guidance from the gold reference.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G0",
+    "query_id": "d7_dev_q02",
+    "context_grade": 2,
+    "reason": "The provided context explicitly states that JSON is not a framed protocol and that repeated dump calls on the same fp produce an invalid JSON file. The answer matches this exactly, and the single citation supports the claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G0",
+    "query_id": "d7_dev_q03",
+    "context_grade": 1,
+    "reason": "The context contains only evidence about the default ensure_ascii=True behavior and does not explicitly state that ensure_ascii=False outputs non-ASCII characters as-is. The answer is an abstention, but it incorrectly claims there were insufficient verifiable citations despite having relevant context; however, it still does not provide the required supported factual answer.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G0",
+    "query_id": "d7_dev_q05",
+    "context_grade": 2,
+    "reason": "Both cited chunks support the answer: rows are returned as lists of strings, and QUOTE_NONNUMERIC makes unquoted/non-quoted fields convert to floats.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G0",
+    "query_id": "d7_dev_q06",
+    "context_grade": 2,
+    "reason": "The verified gold explicitly says that if fieldnames is provided, the first row will be included in the results, so the answer’s main claim (“No” / insufficient evidence) is wrong. Citation 1 is supported by the generic DictReader description, but citation 2 is unsupported because the example only shows omitted fieldnames and does not support the claim that the corpus is insufficient.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G0",
+    "query_id": "d7_dev_q07",
+    "context_grade": 2,
+    "reason": "The retrieved Python csv docs explicitly say `has_header` analyzes a sample and estimates whether the first row is column headers, which supports the answer’s claim that it is not a guarantee. The verified gold additionally states it is a rough heuristic with possible false positives and negatives, matching the reference answer.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G0",
+    "query_id": "d7_dev_q09",
+    "context_grade": 2,
+    "reason": "The retrieved context directly states that pure paths provide purely computational operations without I/O and that concrete paths inherit from pure paths but also provide I/O operations. The answer matches this exactly, and both citations support the respective claims.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G0",
+    "query_id": "d7_dev_q10",
+    "context_grade": 2,
+    "reason": "The cited context explicitly states that Path.absolute() makes the path absolute “without normalization or resolving symlinks,” which directly supports the answer and matches the verified reference.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G0",
+    "query_id": "d7_dev_q11",
+    "context_grade": 2,
+    "reason": "The cited pathlib documentation explicitly says double dots and leading double slashes are preserved because collapsing them could change a path's meaning, e.g. with symbolic links or UNC paths. The answer matches this exactly.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G0",
+    "query_id": "d7_dev_q13",
+    "context_grade": 2,
+    "reason": "The retrieved gzip docs explicitly say that for text mode, a GzipFile object is created and wrapped in an io.TextIOWrapper with the specified encoding, error handling behavior, and line endings. The answer matches the reference and the cited chunk supports it.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G0",
+    "query_id": "d7_dev_q14",
+    "context_grade": 2,
+    "reason": "The cited context explicitly states that invalid gzip files raise EOFError and zlib.error, and that the exception inherits from OSError. The answer matches the reference exactly.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G0",
+    "query_id": "d7_dev_q15",
+    "context_grade": 2,
+    "reason": "The supplied context directly states that closing GzipFile does not close fileobj, because you may want to append more material afterward, and that this permits using io.BytesIO and later retrieving its buffer with getvalue(). The answer matches the reference and the single citation supports the claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G0",
+    "query_id": "d7_dev_q17",
+    "context_grade": 2,
+    "reason": "The provided context explicitly states that multiple calls to getLogger with the same name always return a reference to the same Logger object, which directly supports the answer's claim that they do not create different logger objects.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G0",
+    "query_id": "d7_dev_q18",
+    "context_grade": 2,
+    "reason": "Both citations support the claim that when a logger in the A.B.C chain has propagate=False, propagation/search up the hierarchy stops at that logger and no further ancestors are used. The answer matches the reference answer.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G0",
+    "query_id": "d7_dev_q19",
+    "context_grade": 2,
+    "reason": "The retrieved context explicitly states that `basicConfig` does nothing if the root logger already has handlers configured, unless `force=True` is set, which matches the reference answer. The single citation directly supports the claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G1",
+    "query_id": "d7_dev_q01",
+    "context_grade": 2,
+    "reason": "The cited context explicitly recommends limiting the size of data to be parsed because untrusted JSON may consume considerable CPU and memory resources. The answer matches this guidance.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G1",
+    "query_id": "d7_dev_q02",
+    "context_grade": 2,
+    "reason": "The retrieved Python docs explicitly say JSON is not a framed protocol and that repeated dump calls using the same fp produce an invalid JSON file, which fully supports the answer. The citation directly matches that claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G1",
+    "query_id": "d7_dev_q03",
+    "context_grade": 2,
+    "reason": "The retrieved context directly states that if ensure_ascii is false, non-ASCII characters are output as-is rather than escaped. The answer matches this exactly and the single citation supports the claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G1",
+    "query_id": "d7_dev_q05",
+    "context_grade": 2,
+    "reason": "The cited context explicitly states that each row is returned as a list of strings and that QUOTE_NONNUMERIC converts unquoted fields to floats. The answer matches this exactly and the single citation supports it.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G1",
+    "query_id": "d7_dev_q06",
+    "context_grade": 2,
+    "reason": "The provided context explicitly states that when fieldnames is provided, the first row is included in the results, and when omitted, the first row is used as fieldnames and omitted. The answer matches this exactly and the single citation supports the claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G1",
+    "query_id": "d7_dev_q07",
+    "context_grade": 1,
+    "reason": "The cited context supports only that Sniffer deduces CSV format and has methods, not the specific behavior of has_header. The answer’s conclusion ('cannot be trusted to always be correct') is plausible but unsupported by the provided citation; it also omits the verified detail that has_header is a rough heuristic with false positives and negatives.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G1",
+    "query_id": "d7_dev_q09",
+    "context_grade": 2,
+    "reason": "The cited pathlib documentation directly states that pure paths provide purely computational operations without I/O, and concrete paths inherit from pure paths but also provide I/O operations. The answer matches this exactly.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G1",
+    "query_id": "d7_dev_q10",
+    "context_grade": 2,
+    "reason": "The provided context directly states that Path.absolute makes the path absolute “without normalization or resolving symlinks,” which matches the reference answer exactly. The single citation points to that supporting excerpt.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G1",
+    "query_id": "d7_dev_q11",
+    "context_grade": 2,
+    "reason": "The cited pathlib documentation directly states that double dots and leading double slashes are preserved because collapsing them could change the meaning of a path, with examples mentioning symbolic links and UNC paths. The answer matches this precisely and is supported by the cited context.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G1",
+    "query_id": "d7_dev_q13",
+    "context_grade": 2,
+    "reason": "The shown gzip docs explicitly state that for text mode, a GzipFile object is created and wrapped in an io.TextIOWrapper instance with the specified encoding and newline handling. The answer matches this exactly and the single citation supports it.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G1",
+    "query_id": "d7_dev_q14",
+    "context_grade": 2,
+    "reason": "The cited gzip documentation explicitly says invalid gzip files can raise BadGzipFile, EOFError, and zlib.error, and that BadGzipFile inherits from OSError. The answer matches the reference exactly.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G1",
+    "query_id": "d7_dev_q15",
+    "context_grade": 2,
+    "reason": "The supplied context directly states that closing a GzipFile does not close fileobj, because you may want to append more data afterward, and that this permits using io.BytesIO and later retrieving the buffer with getvalue(). The answer matches this exactly and the single citation supports the claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G1",
+    "query_id": "d7_dev_q17",
+    "context_grade": 2,
+    "reason": "The cited logging documentation explicitly says multiple calls to getLogger with the same name return a reference to the same Logger object, so the answer is fully supported and correct.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G1",
+    "query_id": "d7_dev_q18",
+    "context_grade": 2,
+    "reason": "The cited context directly says that if any logger in the A.B.C chain has propagate set to false, that logger is the last whose handlers are offered the event and propagation stops there. The answer matches this exactly.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G1",
+    "query_id": "d7_dev_q19",
+    "context_grade": 1,
+    "reason": "The context supports that basicConfig is only called automatically if the root logger has no handlers, but it does not explicitly state the key condition from the reference answer: that basicConfig itself does nothing when handlers already exist unless force=True. The answer also omits the force=True exception and citation 2 is misused because it discusses debug(), not basicConfig.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G2",
+    "query_id": "d7_dev_q01",
+    "context_grade": 2,
+    "reason": "The cited context explicitly says a malicious JSON string may consume considerable CPU and memory and recommends limiting the size of data to be parsed. The answer matches the reference answer and is supported by the citation.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G2",
+    "query_id": "d7_dev_q02",
+    "context_grade": 2,
+    "reason": "The provided context explicitly says JSON is not a framed protocol and that repeated calls to dump using the same fp result in an invalid JSON file, which directly supports the answer. The citation matches that context.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G2",
+    "query_id": "d7_dev_q03",
+    "context_grade": 2,
+    "reason": "The provided context directly states that if ensure_ascii is false, non-ASCII characters are output as-is, which matches the answer. The citation supports the claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G2",
+    "query_id": "d7_dev_q05",
+    "context_grade": 2,
+    "reason": "The provided context explicitly says each row is returned as a list of strings and that unquoted fields are transformed into floats when QUOTE_NONNUMERIC is specified. The answer matches this exactly, and the single citation supports the claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G2",
+    "query_id": "d7_dev_q06",
+    "context_grade": 2,
+    "reason": "The cited context explicitly states that if fieldnames is provided, the first row is included in the results, and if omitted, the first row is used as fieldnames and omitted. The answer matches this exactly.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G2",
+    "query_id": "d7_dev_q07",
+    "context_grade": 1,
+    "reason": "The answer’s conclusion matches the reference, but the cited context does not actually mention `has_header` or the warning that it is a rough heuristic with false positives/negatives. The available snippet only says `Sniffer` deduces CSV format and lists its methods, so the citation does not support the specific claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G2",
+    "query_id": "d7_dev_q09",
+    "context_grade": 2,
+    "reason": "The retrieved context explicitly states that pure paths provide purely computational operations without I/O and that concrete paths inherit from pure paths but also provide I/O operations. Both cited chunks support the corresponding claims in the answer.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G2",
+    "query_id": "d7_dev_q10",
+    "context_grade": 2,
+    "reason": "The context explicitly says Path.absolute makes the path absolute “without normalization or resolving symlinks,” and also notes that Path.resolve resolves symlinks and removes “..” components. The answer matches this exactly, and the single citation supports the claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G2",
+    "query_id": "d7_dev_q11",
+    "context_grade": 2,
+    "reason": "The cited pathlib documentation directly states that double dots and leading double slashes are preserved because collapsing them would change the meaning of a path, with examples including symbolic links and UNC paths. The answer matches this exactly.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G2",
+    "query_id": "d7_dev_q13",
+    "context_grade": 2,
+    "reason": "The provided context explicitly says that for text mode, a GzipFile object is created and wrapped in an io.TextIOWrapper instance with the specified encoding, error handling behavior, and line endings. The answer matches this and the single citation supports the claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G2",
+    "query_id": "d7_dev_q14",
+    "context_grade": 2,
+    "reason": "The cited context explicitly says invalid gzip files can raise BadGzipFile, EOFError, and zlib.error, and that BadGzipFile inherits from OSError. The answer matches the reference exactly.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G2",
+    "query_id": "d7_dev_q15",
+    "context_grade": 2,
+    "reason": "The retrieved context explicitly says that GzipFile.close does not close fileobj, and explains why: you may want to append more material after the compressed data; it also mentions the BytesIO/getvalue use case. The answer matches this exactly and the single citation supports the claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G2",
+    "query_id": "d7_dev_q17",
+    "context_grade": 2,
+    "reason": "The retrieved context explicitly says multiple calls to logging.getLogger with the same name always return a reference to the same Logger object / same logger instance, which directly supports the answer. The citation matches the claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G2",
+    "query_id": "d7_dev_q18",
+    "context_grade": 2,
+    "reason": "The retrieved context directly states that if any logger in A.B.C -> A.B -> A has propagate set to false, that logger is the last one whose handlers are offered the event and propagation stops there. Both citations support the same claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G2",
+    "query_id": "d7_dev_q19",
+    "context_grade": 2,
+    "reason": "The provided context directly supports the answer: it says basicConfig is called only if the root logger has no handlers, and that it does nothing if the root logger already has handlers configured unless force=True. Both citations match these claims.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G3",
+    "query_id": "d7_dev_q01",
+    "context_grade": 2,
+    "reason": "The cited context explicitly recommends limiting the size of data to be parsed because untrusted JSON may consume considerable CPU and memory. The answer matches the reference answer and is fully supported by the citation.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G3",
+    "query_id": "d7_dev_q02",
+    "context_grade": 2,
+    "reason": "The supplied context directly states that JSON is not a framed protocol and that repeated dump calls on the same fp produce an invalid JSON file, which fully supports the answer and its single citation.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G3",
+    "query_id": "d7_dev_q03",
+    "context_grade": 2,
+    "reason": "The provided context directly states that if ensure_ascii is false, non-ASCII characters are output as-is rather than escaped. The answer matches this exactly, and the single citation supports the claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G3",
+    "query_id": "d7_dev_q05",
+    "context_grade": 2,
+    "reason": "The cited csv documentation explicitly says each row is returned as a list of strings, and that unquoted fields are transformed into floats when QUOTE_NONNUMERIC is specified. The answer matches this exactly and the single citation supports it.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G3",
+    "query_id": "d7_dev_q06",
+    "context_grade": 2,
+    "reason": "The provided context explicitly states that if fieldnames is provided, the first row will be included in the results; if omitted, the first row is used as fieldnames and omitted. The answer matches this exactly, and the cited source supports the claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G3",
+    "query_id": "d7_dev_q07",
+    "context_grade": 2,
+    "reason": "The retrieved context explicitly states that csv.Sniffer.has_header is a rough heuristic and may produce both false positives and false negatives, which directly supports the answer’s claim that it cannot be trusted to always detect a header correctly.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G3",
+    "query_id": "d7_dev_q09",
+    "context_grade": 2,
+    "reason": "The retrieved context explicitly states that pure paths provide purely computational operations without I/O, while concrete paths inherit from pure paths and also provide I/O/system-call operations. Both citations support the respective claims.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G3",
+    "query_id": "d7_dev_q10",
+    "context_grade": 2,
+    "reason": "The provided context directly states that Path.absolute makes the path absolute “without normalization or resolving symlinks,” and that Path.resolve resolves symlinks and eliminates \"..\" components. The answer matches both claims, and both citations are supported by the shown context.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G3",
+    "query_id": "d7_dev_q11",
+    "context_grade": 2,
+    "reason": "The context explicitly states that double dots and leading double slashes are preserved because collapsing them would change a path's meaning, e.g. for symbolic links and UNC paths. The answer matches this and the cited chunk supports it.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G3",
+    "query_id": "d7_dev_q13",
+    "context_grade": 2,
+    "reason": "The retrieved gzip docs explicitly say that for text mode a GzipFile object is created and wrapped in an io.TextIOWrapper with specified encoding, error handling, and line ending(s), which directly supports the answer.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G3",
+    "query_id": "d7_dev_q14",
+    "context_grade": 2,
+    "reason": "The cited gzip documentation explicitly says invalid gzip files can raise BadGzipFile, EOFError, and zlib.error, and that BadGzipFile inherits from OSError. The answer matches this exactly.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G3",
+    "query_id": "d7_dev_q15",
+    "context_grade": 2,
+    "reason": "The retrieved context directly states that closing GzipFile does not close fileobj, because more material may be appended afterward, and that this enables using io.BytesIO and later calling getvalue(). The answer matches this exactly and the single citation supports the claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G3",
+    "query_id": "d7_dev_q17",
+    "context_grade": 2,
+    "reason": "The retrieved logging docs explicitly state that multiple calls to getLogger with the same name return the same Logger object/instance. The answer matches this and both citations support the claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G3",
+    "query_id": "d7_dev_q18",
+    "context_grade": 2,
+    "reason": "The context explicitly says that if any logger in the A.B.C, A.B, A chain has propagate set to false, that logger becomes the last whose handlers are offered the event and propagation stops there. The answer matches this and both citations are supported by the provided chunks.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  },
+  {
+    "config_id": "G3",
+    "query_id": "d7_dev_q19",
+    "context_grade": 2,
+    "reason": "The retrieved context directly states that basicConfig does nothing if the root logger already has handlers configured, unless force=True is set. The answer matches this exactly and the single citation supports the claim.",
+    "reviewer": "OpenAI model AI-assisted judge; not independent human review"
+  }
+]

@@ -1,0 +1,215 @@
+{
+  "G0": {
+    "scheduled": 17,
+    "successful": 17,
+    "errors": 0,
+    "original_query_hit1": {
+      "n": 7,
+      "N": 15,
+      "rate": 0.4666666666666667
+    },
+    "original_query_hit3": {
+      "n": 10,
+      "N": 15,
+      "rate": 0.6666666666666666
+    },
+    "context_evidence_rate": {
+      "n": 10,
+      "N": 15,
+      "rate": 0.6666666666666666
+    },
+    "context_grades": {
+      "0": 0,
+      "1": 2,
+      "2": 13
+    },
+    "grounded_answer_grades": {
+      "0": 2,
+      "1": 1,
+      "2": 12
+    },
+    "grounded_answer_mean": 1.6666666666666667,
+    "grade2_all_answerable": {
+      "n": 12,
+      "N": 15,
+      "rate": 0.8
+    },
+    "citation_validity": {
+      "n": 19,
+      "N": 20,
+      "rate": 0.95
+    },
+    "answer_citation_coverage": {
+      "n": 15,
+      "N": 15,
+      "rate": 1.0
+    },
+    "abstention": {
+      "n": 1,
+      "N": 2,
+      "rate": 0.5
+    },
+    "false_abstention": {
+      "n": 1,
+      "N": 15,
+      "rate": 0.06666666666666667
+    },
+    "tool_use": {
+      "n": 17,
+      "N": 17,
+      "rate": 1.0
+    },
+    "search_count_distribution": {
+      "1": 17
+    },
+    "mean_elapsed_ms": 2141.7079588236716,
+    "agent_model_calls": 34,
+    "judge_model_calls": 17,
+    "agent_estimated_cost_usd": 0.0255345,
+    "judge_estimated_cost_usd": 0.019452749999999998,
+    "prompt_tokens": 20672,
+    "completion_tokens": 2229
+  },
+  "G1": {
+    "scheduled": 17,
+    "successful": 17,
+    "errors": 0,
+    "original_query_hit1": {
+      "n": 10,
+      "N": 15,
+      "rate": 0.6666666666666666
+    },
+    "original_query_hit3": {
+      "n": 12,
+      "N": 15,
+      "rate": 0.8
+    },
+    "context_evidence_rate": {
+      "n": 12,
+      "N": 15,
+      "rate": 0.8
+    },
+    "context_grades": {
+      "0": 0,
+      "1": 2,
+      "2": 13
+    },
+    "grounded_answer_grades": {
+      "0": 0,
+      "1": 2,
+      "2": 13
+    },
+    "grounded_answer_mean": 1.8666666666666667,
+    "grade2_all_answerable": {
+      "n": 13,
+      "N": 15,
+      "rate": 0.8666666666666667
+    },
+    "citation_validity": {
+      "n": 15,
+      "N": 16,
+      "rate": 0.9375
+    },
+    "answer_citation_coverage": {
+      "n": 15,
+      "N": 15,
+      "rate": 1.0
+    },
+    "abstention": {
+      "n": 2,
+      "N": 2,
+      "rate": 1.0
+    },
+    "false_abstention": {
+      "n": 0,
+      "N": 15,
+      "rate": 0.0
+    },
+    "tool_use": {
+      "n": 17,
+      "N": 17,
+      "rate": 1.0
+    },
+    "search_count_distribution": {
+      "1": 17
+    },
+    "mean_elapsed_ms": 2302.9568058823315,
+    "agent_model_calls": 34,
+    "judge_model_calls": 17,
+    "agent_estimated_cost_usd": 0.0245175,
+    "judge_estimated_cost_usd": 0.01904925,
+    "prompt_tokens": 20996,
+    "completion_tokens": 1949
+  },
+  "G2": {
+    "scheduled": 17,
+    "successful": 17,
+    "errors": 0,
+    "original_query_hit1": {
+      "n": 11,
+      "N": 15,
+      "rate": 0.7333333333333333
+    },
+    "original_query_hit3": {
+      "n": 12,
+      "N": 15,
+      "rate": 0.8
+    },
+    "context_evidence_rate": {
+      "n": 12,
+      "N": 15,
+      "rate": 0.8
+    },
+    "context_grades": {
+      "0": 0,
+      "1": 1,
+      "2": 14
+    },
+    "grounded_answer_grades": {
+      "0": 0,
+      "1": 1,
+      "2": 14
+    },
+    "grounded_answer_mean": 1.9333333333333333,
+    "grade2_all_answerable": {
+      "n": 14,
+      "N": 15,
+      "rate": 0.9333333333333333
+    },
+    "citation_validity": {
+      "n": 18,
+      "N": 19,
+      "rate": 0.9473684210526315
+    },
+    "answer_citation_coverage": {
+      "n": 16,
+      "N": 16,
+      "rate": 1.0
+    },
+    "abstention": {
+      "n": 1,
+      "N": 2,
+      "rate": 0.5
+    },
+    "false_abstention": {
+      "n": 0,
+      "N": 15,
+      "rate": 0.0
+    },
+    "tool_use": {
+      "n": 17,
+      "N": 17,
+      "rate": 1.0
+    },
+    "search_count_distribution": {
+      "1": 17
+    },
+    "mean_elapsed_ms": 1995.3004294117873,
+    "agent_model_calls": 34,
+    "judge_model_calls": 17,
+    "agent_estimated_cost_usd": 0.025062,
+    "judge_estimated_cost_usd": 0.019095,
+    "prompt_tokens": 20798,
+    "completion_tokens": 2103
+  }
+}

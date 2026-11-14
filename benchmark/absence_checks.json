@@ -1,0 +1,59 @@
+[
+  {
+    "query_id": "d7_dev_absent_json",
+    "module": "json",
+    "reason": "The complete corpus documents JSON serialization, not an automatic AES encryption key. No encryption/key specification exists in the supplied snapshot.",
+    "term_matches": {
+      "AES": [],
+      "encryption": [],
+      "encrypt": [],
+      "password": []
+    },
+    "reviewer": "Codex AI source-scope review, not independent human verification",
+    "scope": "all five normalized documents plus relevant complete module",
+    "corpus_manifest_hash": "c0c952c9083dadc170882f8e80548895cae0af1396ddbe9013917d264f188f6f",
+    "checked_at": "2026-11-14T14:51:24.069426+07:00"
+  },
+  {
+    "query_id": "d7_dev_absent_csv",
+    "module": "csv",
+    "reason": "CSV reference documents field size limits and iteration, but states no hard per-file row maximum. Absence is about this corpus, not a universal claim that no limits can exist.",
+    "term_matches": {
+      "maximum number of rows": [],
+      "row limit": [],
+      "maximum rows": []
+    },
+    "reviewer": "Codex AI source-scope review, not independent human verification",
+    "scope": "all five normalized documents plus relevant complete module",
+    "corpus_manifest_hash": "c0c952c9083dadc170882f8e80548895cae0af1396ddbe9013917d264f188f6f",
+    "checked_at": "2026-11-14T14:51:24.090515+07:00"
+  },
+  {
+    "query_id": "d7_test_absent_gzip",
+    "module": "gzip",
+    "reason": "The gzip source documents compression/decompression and no encryption password or default password.",
+    "term_matches": {
+      "password": [],
+      "encrypt": [],
+      "encryption": []
+    },
+    "reviewer": "Codex AI source-scope review, not independent human verification",
+    "scope": "all five normalized documents plus relevant complete module",
+    "corpus_manifest_hash": "c0c952c9083dadc170882f8e80548895cae0af1396ddbe9013917d264f188f6f",
+    "checked_at": "2026-11-14T14:51:24.112982+07:00"
+  },
+  {
+    "query_id": "d7_test_absent_logging",
+    "module": "logging",
+    "reason": "Logging source describes locks, handlers and formatting, but provides no guaranteed per-record delivery latency or SLA.",
+    "term_matches": {
+      "SLA": [],
+      "latency": [],
+      "delivery guarantee": []
+    },
+    "reviewer": "Codex AI source-scope review, not independent human verification",
+    "scope": "all five normalized documents plus relevant complete module",
+    "corpus_manifest_hash": "c0c952c9083dadc170882f8e80548895cae0af1396ddbe9013917d264f188f6f",
+    "checked_at": "2026-11-14T14:51:24.136815+07:00"
+  }
+]

@@ -1,0 +1,400 @@
+[
+  {
+    "id": "d7_dev_absent_csv",
+    "split": "dev",
+    "answerable": false,
+    "question": "What hard maximum number of CSV rows does Python csv.reader allow per input file?",
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "CSV reference documents field size limits and iteration, but states no hard per-file row maximum. Absence is about this corpus, not a universal claim that no limits can exist.",
+    "gold": [],
+    "filter": {
+      "module": "csv"
+    },
+    "origin": "new near-topic unanswerable case"
+  },
+  {
+    "id": "d7_dev_absent_json",
+    "split": "dev",
+    "answerable": false,
+    "question": "What AES-256 encryption key does the json module automatically use for serialized data?",
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "The complete corpus documents JSON serialization, not an automatic AES encryption key. No encryption/key specification exists in the supplied snapshot.",
+    "gold": [],
+    "filter": {
+      "module": "json"
+    },
+    "origin": "new near-topic unanswerable case"
+  },
+  {
+    "id": "d7_dev_q01",
+    "split": "dev",
+    "answerable": true,
+    "question": "What resource safeguard is recommended before decoding untrusted JSON?",
+    "expected_answer": "Limit the size of input to avoid excessive CPU and memory usage.",
+    "gold": [
+      {
+        "source_id": "python-json",
+        "page": 1,
+        "evidence": "Be cautious when parsing JSON data from untrusted sources. A malicious JSON string may cause the decoder to consume considerable CPU and memory resources. Limiting the size of data to be parsed is recommended."
+      }
+    ],
+    "filter": null,
+    "origin": "Day 06 dev, revalidated before Day 07 retrieval"
+  },
+  {
+    "id": "d7_dev_q02",
+    "split": "dev",
+    "answerable": true,
+    "question": "Why do repeated json.dump calls on the same output stream not form a valid JSON file?",
+    "expected_answer": "JSON is not a framed protocol, so repeated serialized objects do not form one valid document.",
+    "gold": [
+      {
+        "source_id": "python-json",
+        "page": 2,
+        "evidence": "Unlike pickle and marshal, JSON is not a framed protocol, so trying to serialize multiple objects with repeated calls to dump using the same *fp* will result in an invalid JSON file."
+      }
+    ],
+    "filter": null,
+    "origin": "Day 06 dev, revalidated before Day 07 retrieval"
+  },
+  {
+    "id": "d7_dev_q03",
+    "split": "dev",
+    "answerable": true,
+    "question": "In the json module, how does ensure_ascii=False affect non-ASCII output?",
+    "expected_answer": "Non-ASCII characters are output as-is rather than escaped.",
+    "gold": [
+      {
+        "source_id": "python-json",
+        "page": 3,
+        "evidence": ":param bool ensure_ascii: If True (the default), the output is guaranteed to have all incoming non-ASCII characters escaped. If False, these characters will be outputted as-is."
+      },
+      {
+        "source_id": "python-json",
+        "page": 7,
+        "evidence": "If *ensure_ascii* is true (the default), the output is guaranteed to have all incoming non-ASCII characters escaped. If *ensure_ascii* is false, these characters will be output as-is."
+      }
+    ],
+    "filter": {
+      "module": "json"
+    },
+    "origin": "Day 06 dev, revalidated before Day 07 retrieval"
+  },
+  {
+    "id": "d7_dev_q05",
+    "split": "dev",
+    "answerable": true,
+    "question": "What types does csv.reader return for row values, and when are unquoted values converted to floats?",
+    "expected_answer": "Rows are lists of strings; QUOTE_NONNUMERIC converts unquoted fields to floats.",
+    "gold": [
+      {
+        "source_id": "python-csv",
+        "page": 2,
+        "evidence": "Each row read from the csv file is returned as a list of strings. No automatic data type conversion is performed unless the QUOTE_NONNUMERIC format option is specified (in which case unquoted fields are transformed into floats)."
+      }
+    ],
+    "filter": null,
+    "origin": "Day 06 dev, revalidated before Day 07 retrieval"
+  },
+  {
+    "id": "d7_dev_q06",
+    "split": "dev",
+    "answerable": true,
+    "question": "For the csv module DictReader, is the first row returned as data if fieldnames is supplied explicitly?",
+    "expected_answer": "Yes. With supplied fieldnames the first row is included; without them it supplies headers and is omitted.",
+    "gold": [
+      {
+        "source_id": "python-csv",
+        "page": 3,
+        "evidence": "The *fieldnames* parameter is a sequence. If *fieldnames* is omitted, the values in the first row of file *f* will be used as the fieldnames and will be omitted from the results. If *fieldnames* is provided, they will be used and the first row will be included in the results. Regardless of how the fieldnames are determined, the dictionary preserves their original ordering."
+      }
+    ],
+    "filter": {
+      "module": "csv"
+    },
+    "origin": "Day 06 dev, revalidated before Day 07 retrieval"
+  },
+  {
+    "id": "d7_dev_q07",
+    "split": "dev",
+    "answerable": true,
+    "question": "Can csv.Sniffer.has_header be trusted to always detect a header correctly?",
+    "expected_answer": "No. It is a rough heuristic that can yield false positives and false negatives.",
+    "gold": [
+      {
+        "source_id": "python-csv",
+        "page": 5,
+        "evidence": "This method is a rough heuristic and may produce both false positives and negatives."
+      }
+    ],
+    "filter": null,
+    "origin": "Day 06 dev, revalidated before Day 07 retrieval"
+  },
+  {
+    "id": "d7_dev_q09",
+    "split": "dev",
+    "answerable": true,
+    "question": "How do pure paths and concrete paths differ in their ability to perform filesystem I/O?",
+    "expected_answer": "Pure paths are computational without I/O; concrete paths inherit them and provide I/O.",
+    "gold": [
+      {
+        "source_id": "python-pathlib",
+        "page": 1,
+        "evidence": "This module offers classes representing filesystem paths with semantics appropriate for different operating systems. Path classes are divided between pure paths <pure-paths>, which provide purely computational operations without I/O, and concrete paths <concrete-paths>, which inherit from pure paths but also provide I/O operations."
+      }
+    ],
+    "filter": null,
+    "origin": "Day 06 dev, revalidated before Day 07 retrieval"
+  },
+  {
+    "id": "d7_dev_q10",
+    "split": "dev",
+    "answerable": true,
+    "question": "In pathlib, does Path.absolute normalize a path or resolve symbolic links?",
+    "expected_answer": "No. It makes a path absolute without normalization or symlink resolution.",
+    "gold": [
+      {
+        "source_id": "python-pathlib",
+        "page": 11,
+        "evidence": "Make the path absolute, without normalization or resolving symlinks. Returns a new path object::"
+      }
+    ],
+    "filter": {
+      "module": "pathlib"
+    },
+    "origin": "Day 06 dev, revalidated before Day 07 retrieval"
+  },
+  {
+    "id": "d7_dev_q11",
+    "split": "dev",
+    "answerable": true,
+    "question": "Why does pathlib preserve double-dot components and leading double slashes when constructing a path?",
+    "expected_answer": "Collapsing them could change the meaning with symbolic links or UNC paths.",
+    "gold": [
+      {
+        "source_id": "python-pathlib",
+        "page": 2,
+        "evidence": "Spurious slashes and single dots are collapsed, but double dots ('..') and leading double slashes ('//') are not, since this would change the meaning of a path for various reasons (e.g. symbolic links, UNC paths)::"
+      }
+    ],
+    "filter": null,
+    "origin": "Day 06 dev, revalidated before Day 07 retrieval"
+  },
+  {
+    "id": "d7_dev_q13",
+    "split": "dev",
+    "answerable": true,
+    "question": "For the gzip module, what wrapper provides encoding and newline handling when opening a file in text mode?",
+    "expected_answer": "A GzipFile is wrapped in io.TextIOWrapper.",
+    "gold": [
+      {
+        "source_id": "python-gzip",
+        "page": 1,
+        "evidence": "For text mode, a GzipFile object is created, and wrapped in an io.TextIOWrapper instance with the specified encoding, error handling behavior, and line ending(s)."
+      }
+    ],
+    "filter": {
+      "module": "gzip"
+    },
+    "origin": "Day 06 dev, revalidated before Day 07 retrieval"
+  },
+  {
+    "id": "d7_dev_q14",
+    "split": "dev",
+    "answerable": true,
+    "question": "Which exceptions can invalid gzip input raise, and which base class does BadGzipFile inherit from?",
+    "expected_answer": "BadGzipFile inherits OSError; EOFError and zlib.error can also be raised.",
+    "gold": [
+      {
+        "source_id": "python-gzip",
+        "page": 1,
+        "evidence": "An exception raised for invalid gzip files. It inherits from OSError. EOFError and zlib.error can also be raised for invalid gzip files."
+      }
+    ],
+    "filter": null,
+    "origin": "Day 06 dev, revalidated before Day 07 retrieval"
+  },
+  {
+    "id": "d7_dev_q15",
+    "split": "dev",
+    "answerable": true,
+    "question": "Does closing GzipFile also close a supplied fileobj, and why?",
+    "expected_answer": "No; callers may append more material or retrieve a BytesIO buffer afterward.",
+    "gold": [
+      {
+        "source_id": "python-gzip",
+        "page": 2,
+        "evidence": "Calling a GzipFile object's !close method does not close *fileobj*, since you might wish to append more material after the compressed data. This also allows you to pass an io.BytesIO object opened for writing as *fileobj*, and retrieve the resulting memory buffer using the io.BytesIO object's ~io.BytesIO.getvalue method."
+      }
+    ],
+    "filter": null,
+    "origin": "Day 06 dev, revalidated before Day 07 retrieval"
+  },
+  {
+    "id": "d7_dev_q17",
+    "split": "dev",
+    "answerable": true,
+    "question": "Do repeated logging.getLogger calls with the same name create different logger objects?",
+    "expected_answer": "No. They return references to the same Logger object.",
+    "gold": [
+      {
+        "source_id": "python-logging",
+        "page": 2,
+        "evidence": "Loggers have the following attributes and methods. Note that Loggers should *NEVER* be instantiated directly, but always through the module-level function logging.getLogger(name). Multiple calls to getLogger with the same name will always return a reference to the same Logger object."
+      }
+    ],
+    "filter": null,
+    "origin": "Day 06 dev, revalidated before Day 07 retrieval"
+  },
+  {
+    "id": "d7_dev_q18",
+    "split": "dev",
+    "answerable": true,
+    "question": "In the logging module hierarchy A.B.C, what happens to propagation when one logger has propagate=False?",
+    "expected_answer": "The event is offered to that logger's handlers and then propagation stops.",
+    "gold": [
+      {
+        "source_id": "python-logging",
+        "page": 3,
+        "evidence": "If any logger in the chain A.B.C, A.B, A has its propagate attribute set to false, then that is the last logger whose handlers are offered the event to handle, and propagation stops at that point."
+      }
+    ],
+    "filter": {
+      "module": "logging"
+    },
+    "origin": "Day 06 dev, revalidated before Day 07 retrieval"
+  },
+  {
+    "id": "d7_dev_q19",
+    "split": "dev",
+    "answerable": true,
+    "question": "When does logging.basicConfig leave an already configured root logger unchanged?",
+    "expected_answer": "When the root already has handlers, unless force=True is given.",
+    "gold": [
+      {
+        "source_id": "python-logging",
+        "page": 21,
+        "evidence": "This function does nothing if the root logger already has handlers configured, unless the keyword argument *force* is set to True."
+      }
+    ],
+    "filter": null,
+    "origin": "Day 06 dev, revalidated before Day 07 retrieval"
+  },
+  {
+    "id": "d7_test_absent_gzip",
+    "split": "test",
+    "answerable": false,
+    "question": "What password does gzip use by default to encrypt archives?",
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "The gzip source documents compression/decompression and no encryption password or default password.",
+    "gold": [],
+    "filter": {
+      "module": "gzip"
+    },
+    "origin": "new near-topic unanswerable case"
+  },
+  {
+    "id": "d7_test_absent_logging",
+    "split": "test",
+    "answerable": false,
+    "question": "What SLA in milliseconds does logging guarantee for delivering every log record?",
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "Logging source describes locks, handlers and formatting, but provides no guaranteed per-record delivery latency or SLA.",
+    "gold": [],
+    "filter": {
+      "module": "logging"
+    },
+    "origin": "new near-topic unanswerable case"
+  },
+  {
+    "id": "d7_test_csv",
+    "split": "test",
+    "answerable": true,
+    "question": "For csv.DictWriter, what happens to extra dictionary keys with extrasaction='raise' (the default) and with 'ignore'?",
+    "expected_answer": "The default raise setting raises ValueError; ignore skips extra dictionary values.",
+    "gold": [
+      {
+        "source_id": "python-csv",
+        "page": 3,
+        "evidence": "If it is set to 'raise', the default value, a ValueError is raised. If it is set to 'ignore', extra values in the dictionary are ignored."
+      }
+    ],
+    "filter": {
+      "module": "csv"
+    },
+    "origin": "new Day 07 held-out fact; no retrieval tuning"
+  },
+  {
+    "id": "d7_test_gzip",
+    "split": "test",
+    "answerable": true,
+    "question": "For gzip GzipFile, what compresslevel disables compression, which level is fastest with compression, and what is the default?",
+    "expected_answer": "Level 0 disables compression, 1 is fastest and produces the least compression, and the default is 9.",
+    "gold": [
+      {
+        "source_id": "python-gzip",
+        "page": 2,
+        "evidence": "The *compresslevel* argument is an integer from 0 to 9 controlling\nthe level of compression; 1 is fastest and produces the least\ncompression, and 9 is slowest and produces the most compression. 0\nis no compression. The default is 9."
+      }
+    ],
+    "filter": null,
+    "origin": "new Day 07 held-out fact; no retrieval tuning"
+  },
+  {
+    "id": "d7_test_json",
+    "split": "test",
+    "answerable": true,
+    "question": "In json encoding, what happens to unsupported dictionary keys when skipkeys is False versus True?",
+    "expected_answer": "False is the default and raises TypeError for keys outside str/int/float/bool/None; True skips such items.",
+    "gold": [
+      {
+        "source_id": "python-json",
+        "page": 3,
+        "evidence": ":param bool skipkeys:\nIf True, keys that are not of a basic type\n(str, int, float, bool, None)\nwill be skipped instead of raising a TypeError.\nDefault False."
+      },
+      {
+        "source_id": "python-json",
+        "page": 7,
+        "evidence": "If *skipkeys* is false (the default), a TypeError will be raised when\ntrying to encode keys that are not str, int, float,\nbool or None. If *skipkeys* is true, such items are simply skipped."
+      }
+    ],
+    "filter": {
+      "module": "json"
+    },
+    "origin": "new Day 07 held-out fact; no retrieval tuning"
+  },
+  {
+    "id": "d7_test_logging",
+    "split": "test",
+    "answerable": true,
+    "question": "What logging level is the root logger created with, compared with a newly created non-root logger?",
+    "expected_answer": "The root logger starts at WARNING; a new non-root logger starts at NOTSET and delegates to its parent.",
+    "gold": [
+      {
+        "source_id": "python-logging",
+        "page": 4,
+        "evidence": "When a logger is created, the level is set to NOTSET (which causes\nall messages to be processed when the logger is the root logger, or delegation\nto the parent when the logger is a non-root logger). Note that the root logger\nis created with level WARNING."
+      }
+    ],
+    "filter": null,
+    "origin": "new Day 07 held-out fact; no retrieval tuning"
+  },
+  {
+    "id": "d7_test_pathlib",
+    "split": "test",
+    "answerable": true,
+    "question": "For pathlib Path.unlink, how does a missing path behave with the default missing_ok=False versus missing_ok=True?",
+    "expected_answer": "The default raises FileNotFoundError; missing_ok=True ignores that exception.",
+    "gold": [
+      {
+        "source_id": "python-pathlib",
+        "page": 19,
+        "evidence": "If *missing_ok* is false (the default), FileNotFoundError is raised if the path does not exist. If *missing_ok* is true, FileNotFoundError exceptions will be ignored (same behavior as the POSIX rm -f command)."
+      }
+    ],
+    "filter": {
+      "module": "pathlib"
+    },
+    "origin": "new Day 07 held-out fact; no retrieval tuning"
+  }
+]

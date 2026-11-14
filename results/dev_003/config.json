@@ -1,0 +1,41 @@
+{
+  "day6_root": "../K5-L3-Day06-NguyenPhuNam-2A202603501-DataIngestionEngineering",
+  "day6_index": "day6_c9ec405fe2e6d0ce2ebc_B",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+  "dimensions": 384,
+  "embedding_max_tokens": 256,
+  "candidate_k": 20,
+  "rrf_constant": 60,
+  "seed": 42,
+  "temperature": 0,
+  "max_output_tokens": 650,
+  "request_timeout_seconds": 120,
+  "max_retries": 1,
+  "configs": {
+    "G0": {
+      "method": "dense",
+      "top_k": 3,
+      "budget_chars": 2400,
+      "max_searches": 1
+    },
+    "G1": {
+      "method": "tfidf",
+      "top_k": 3,
+      "budget_chars": 2400,
+      "max_searches": 1
+    },
+    "G2": {
+      "method": "hybrid",
+      "top_k": 3,
+      "budget_chars": 2400,
+      "max_searches": 1
+    },
+    "G3": {
+      "method": "hybrid",
+      "top_k": 6,
+      "budget_chars": 4800,
+      "max_searches": 3
+    }
+  }
+}

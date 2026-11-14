@@ -1,0 +1,6 @@
+# Activate the existing environment: conda activate vinai
+psycopg[binary]==3.3.8
+sentence-transformers>=5,<6
+numpy>=2,<3
+python-dotenv>=1,<2
+requests>=2,<3

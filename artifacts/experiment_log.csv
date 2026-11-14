@@ -1,0 +1,7 @@
+config_id,split,method,top_k,budget_chars,max_searches,hypothesis,hit1_n,hit3_n,answerable_N,context_evidence_n,fully_grounded_n,abstention_n,unanswerable_N,agent_usd_est,judge_usd_est,mean_agent_ms,errors,source_run,review_kind
+G0,dev,dense,3,2400,1,Baseline dense; one search and top-3.,7,10,15,10,12,1,2,0.0255345,0.019452749999999998,2141.7079588236716,0,dev_all,raw AI judge
+G1,dev,tfidf,3,2400,1,Lexical API/parameter matching may improve exact condition retrieval.,10,12,15,12,13,2,2,0.0245175,0.01904925,2302.9568058823315,0,dev_all,raw AI judge
+G2,dev,hybrid,3,2400,1,RRF may combine lexical precision with semantic recall.,11,12,15,12,14,1,2,0.025062,0.019095,1995.3004294117873,0,dev_all,raw AI judge
+G3,dev,hybrid,6,4800,3,More candidates/context and searches may recover missing conditions; multi-factor experiment.,11,12,15,14,15,2,2,0.03765525,0.0257385,2366.1971823529284,0,dev_all,raw AI judge
+G0,test audited,dense,3,2400,1,Baseline dense; one search and top-3.,3,4,5,3,3,1,2,0.00992775,0.00794325,2210.107685714255,0,test_audited_001,Codex AI source audit; raw labels retained
+G3,test audited,hybrid,6,4800,3,More candidates/context and searches may recover missing conditions; multi-factor experiment.,3,4,5,5,5,1,2,0.01488525,0.010494,2379.2145857141804,0,test_audited_001,Codex AI source audit; raw labels retained

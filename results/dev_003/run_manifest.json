@@ -1,0 +1,100 @@
+{
+  "at": "2026-11-14T15:09:16.160359+07:00",
+  "fingerprints": {
+    "config": "e58583a9c9419d3fa4aefa8069e7de20cec1c7906ab752ed85bca2868498a972",
+    "source": "6895d41a5741956ae0afe53c92139f711831b362fd7d448422cb77c03648f3e0",
+    "benchmark": "7b2ed6adb46895d3d180326fd063b2436d3c9c42ae1a4f29e5f1175f37ffbd85",
+    "protocol": "a23744daccad365e1fc689d87fe4399e078c11cbc1b028811a6002960f292b96",
+    "code": "956e12655ae9cf7f245878118ecffa2e152b967cd7745f26247b62fc08484d46",
+    "model": "d4b9fbf8974d4a3660e51b325bda0840f8cfaea2a26a123bc13b937a7531c18e",
+    "prompts": "a77820ce7b1c87f301abbfd8c2a856db280d5753923ab3dd0e9fd9b810a2a084"
+  },
+  "config": {
+    "day6_root": "../K5-L3-Day06-NguyenPhuNam-2A202603501-DataIngestionEngineering",
+    "day6_index": "day6_c9ec405fe2e6d0ce2ebc_B",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+    "dimensions": 384,
+    "embedding_max_tokens": 256,
+    "candidate_k": 20,
+    "rrf_constant": 60,
+    "seed": 42,
+    "temperature": 0,
+    "max_output_tokens": 650,
+    "request_timeout_seconds": 120,
+    "max_retries": 1,
+    "configs": {
+      "G0": {
+        "method": "dense",
+        "top_k": 3,
+        "budget_chars": 2400,
+        "max_searches": 1
+      },
+      "G1": {
+        "method": "tfidf",
+        "top_k": 3,
+        "budget_chars": 2400,
+        "max_searches": 1
+      },
+      "G2": {
+        "method": "hybrid",
+        "top_k": 3,
+        "budget_chars": 2400,
+        "max_searches": 1
+      },
+      "G3": {
+        "method": "hybrid",
+        "top_k": 6,
+        "budget_chars": 4800,
+        "max_searches": 3
+      }
+    }
+  },
+  "source": {
+    "manifest": "c0c952c9083dadc170882f8e80548895cae0af1396ddbe9013917d264f188f6f",
+    "chunks": "77cd00eef7303b3f10c77f28ba90d03a4d8a04f05daf466bf0239e298e22178a",
+    "source_units": 68,
+    "day6_root_name": "K5-L3-Day06-NguyenPhuNam-2A202603501-DataIngestionEngineering",
+    "index_id": "day6_c9ec405fe2e6d0ce2ebc_B"
+  },
+  "model": {
+    "provider": "OpenAI-compatible Chat Completions",
+    "endpoint": "https://api.openai.com/v1",
+    "requested_model": "gpt-5.4-mini",
+    "model": "gpt-5.4-mini-2026-03-17",
+    "reasoning_effort": "none",
+    "prices_usd_per_million": {
+      "input": 0.75,
+      "output": 4.5,
+      "cached": 0.075
+    },
+    "price_source": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+    "price_checked_date": "2026-11-14",
+    "cost_kind": "estimate from observed usage, not an invoice"
+  },
+  "python": "3.13.18 | packaged by Anaconda, Inc. | (main, Oct 27 2026, 00:53:21) [MSC v.1942 64 bit (AMD64)]",
+  "executable": "C:\\Users\\ASUS\\anaconda3\\envs\\vinai\\python.exe",
+  "packages": {
+    "requests": "2.34.2",
+    "psycopg": "3.3.8",
+    "sentence-transformers": "5.7.0",
+    "transformers": "5.23.0",
+    "torch": "2.15.0",
+    "numpy": "2.5.4",
+    "python-dotenv": "1.2.4"
+  },
+  "review_method": "AI-assisted model judge, same model family; not independent human labels",
+  "split": "dev",
+  "config_ids": [
+    "G3"
+  ],
+  "status": "complete",
+  "started_at": "2026-11-14T15:09:16.171231+07:00",
+  "database": {
+    "rows": 418,
+    "dimensions": 384,
+    "postgres": "16.16 (Debian 16.16-1.pgdg12+1)",
+    "pgvector": "0.8.7"
+  },
+  "completed_at": "2026-11-14T15:10:46.852307+07:00"
+}
